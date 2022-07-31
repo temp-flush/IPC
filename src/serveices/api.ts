@@ -21,6 +21,7 @@ enum Api {
   deviceGroupInfo = '/api/area/',
   deviceGroupUpdate = '/api/area/',
   // settings
+  ConfigGet = '/api/control?cmd=broadcast_control',
   deviceAudioFileGet = '/api/file/bgm1',
   deviceAudioFileRemove = '/api/file/',
   deviceTimerSettingGet = '/api/schedule',
@@ -35,8 +36,8 @@ enum Api {
   deviceEventUpdate = '/api/command/',
   deviceSourceGet = '/deviceSourceGet',
   deviceGpoGet = '/deviceGpoGet',
-  deviceGpiEventSettingGet = '/deviceGpiEventSettingGet',
-  // deviceGpiEventSettingGet = '/api/trigger',
+  // deviceGpiEventSettingGet = '/deviceGpiEventSettingGet',
+  deviceGpiEventSettingGet = '/api/trigger',
   deviceGpiEventSettingRemove = '/api/trigger/',
   deviceGpiEventSettingAdd = '/api/trigger/',
   deviceGpiEventSettingUpdate = '/api/trigger/',

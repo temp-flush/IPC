@@ -8,7 +8,7 @@
           </RadioGroup>
         </div>
         <div class="space-x-6 pt-2 pl-18">
-          <Icon icon="settings-export|svg" size="28" />
+          <Icon icon="settings-export|svg" size="28" @click="getConfig"/>
           <Icon icon="settings-import|svg" size="28" />
         </div>
       </div>
@@ -40,7 +40,12 @@
 <script lang="ts" setup>
   import { RadioButton, RadioGroup } from 'ant-design-vue';
   import { Icon } from '/@/components/Icon';
-
+  import { ConfigGet } from '/@/serveices';
+  const getConfig = ()=>{
+    ConfigGet().then(res=>{
+      console.log(res)
+    })
+  }
   // active-settings
   // provide('active-setting', activeKey);
 </script>

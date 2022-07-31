@@ -233,7 +233,7 @@
   const editableData: UnwrapRef<Record<string, ScopeType['record']>> = reactive({});
   const edit = (key: number) => {
     console.log(tableData)
-    editableData[key] = cloneDeep(tableData.value.items.filter((item) => key === item.id)[0]);
+    editableData[key] = cloneDeep(tableData.value.filter((item) => key === item.id)[0]);
   };
   const save = (key: number) => {
     console.log(appendData, key);
@@ -249,7 +249,7 @@
     }
   };
   function timerSave() {
-    const filterData = cloneDeep(tableData.value.items.filter((item) => selectKeys.value[0] === item.id)[0]);
+    const filterData = cloneDeep(tableData.value.filter((item) => selectKeys.value[0] === item.id)[0]);
     console.log(filterData)
     emit('update:name', filterData.name);
     emit('update:value', selectKeys.value[0]);

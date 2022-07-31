@@ -199,7 +199,7 @@
   import { reactive, ref, UnwrapRef } from 'vue';
   import { cloneDeep } from 'lodash-es';
   import { KEY_FUNCTION_LIST } from '../../../utils/enum';
-  const { tableRequest, refTable, tableCols, selectKeys, onAdd, tableData } = useSpTable({
+  const { tableRequest, refTable, tableCols, selectKeys, onRemove, onAdd, tableData } = useSpTable({
     request: deviceGpiEventSettingGet,
     remove: deviceGpiEventSettingRemove,
     cols: [
@@ -255,6 +255,7 @@
   // edit
   const editableData: UnwrapRef<Record<string, ScopeType['record']>> = reactive({});
   const edit = (key: number) => {
+    console.log(tableData.value, key)
     editableData[key] = cloneDeep(tableData.value.filter((item) => key === item.id)[0]);
   };
   const save = (key: number) => {
@@ -267,7 +268,7 @@
       eventVisible.value = false;
       console.log(editableData[key]);
       deviceGpiEventSettingUpdate(editableData[key]).then(() => {
-        Object.assign(tableData.value.items.filter((item) => key === item.id)[0], editableData[key]);
+        Object.assign(tableData.value.filter((item) => key === item.id)[0], editableData[key]);
         delete editableData[key];
       });
     }

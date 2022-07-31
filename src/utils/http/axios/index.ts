@@ -39,7 +39,8 @@ const transform: AxiosTransform = {
     // 用于页面代码可能需要直接获取code，data，message这些信息时开启
     console.log(res);
     if (!isTransformResponse) {
-      return res.data;
+      const { code, items, message } = res.data;
+      return items ? items : res.data;
     }
     // 错误的时候返回
     const { data } = res;

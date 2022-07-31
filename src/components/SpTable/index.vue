@@ -84,6 +84,7 @@
           : Array.isArray(props.dataSource)
           ? props.dataSource.slice(0)
           : props.dataSource;
+      console.log(data)
       return data;
     },
     { autoRun: false },

@@ -13,7 +13,7 @@
           <Icon icon="tree-group|svg" v-if="!!children" />
           <Icon icon="tree-zone|svg" v-else />
         </div>
-        <div class="flex-1">{{ title }}</div>
+        <div class="flex-1" v-if="data">{{ title }}</div>
         <div class="space-x-2">
           <Icon icon="status-net|svg" v-if="!!data" />
         </div>

@@ -238,6 +238,11 @@ export const deviceGroupUpdate: RequestFunction = function (id, params) {
   return defHttp.put(Api.deviceGroupUpdate + id[0], { params }, { isTransformResponse: false });
 };
 // setting
+
+export const ConfigGet: RequestFunction = function (params) {
+  return defHttp.get(Api.ConfigGet, { params }, { isTransformResponse: false });
+};
+
 export const deviceAudioFileGet: RequestFunction = function (params) {
   return defHttp.get(Api.deviceAudioFileGet, { params }, { isTransformResponse: false });
 };
@@ -384,7 +389,7 @@ export const deviceGpoGet: RequestFunction = function (params) {
   return defHttp.post(Api.deviceGpoGet, { params });
 };
 export const deviceGpiEventSettingGet: RequestFunction = function (params) {
-  return defHttp.post(Api.deviceGpiEventSettingGet, { params });
+  return defHttp.get(Api.deviceGpiEventSettingGet, { params }, { isTransformResponse: false });
 };
 
 export const deviceGpiEventSettingAdd: RequestFunction = function (params) {
@@ -403,15 +408,15 @@ export const deviceGpiEventSettingAdd: RequestFunction = function (params) {
   delete params.gpi;
   delete params.type;
   console.log(params);
-  return defHttp.post(Api.deviceGpiEventSettingAdd, { params });
+  return defHttp.post(Api.deviceGpiEventSettingAdd, { params }, { isTransformResponse: false });
 };
 
 export const deviceGpiEventSettingUpdate: RequestFunction = function (params) {
-  return defHttp.put(Api.deviceGpiEventSettingUpdate, { params });
+  return defHttp.put(Api.deviceGpiEventSettingUpdate, { params }, { isTransformResponse: false });
 };
 
 export const deviceGpiEventSettingRemove: RequestFunction = function (params) {
-  return defHttp.delete(Api.deviceGpiEventSettingRemove + params);
+  return defHttp.delete(Api.deviceGpiEventSettingRemove + params.selectKeys, {}, { isTransformResponse: false });
 };
 
 // 扩展接口

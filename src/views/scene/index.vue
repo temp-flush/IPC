@@ -62,7 +62,7 @@
   const unpackDataList = computed(() => unpackTreeData(dataList.value ?? []));
   watchEffect(() => {
     activeDeviceNode.value = unpackDataList.value?.find(
-      (item) => item.data.type === DEVICE_TYPE.TERMINAL,
+      (item) => item.data?.type === DEVICE_TYPE.TERMINAL,
     );
   });
   const activeDevice = computed(() => activeDeviceNode.value?.data);
