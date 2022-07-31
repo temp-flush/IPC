@@ -1,0 +1,21 @@
+{
+  "etting": {
+    "fault": {
+      "form": {
+        "item": "Item"
+      }
+    }
+  },
+  "setting": {
+    "fault": {
+      "form": {
+        "item": "Item",
+        "status": "监测情况"
+      }
+    }
+  },
+  "settings": {
+    "fault": "故障监测"
+  },
+  "title": "监测管理"
+}

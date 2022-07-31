@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 (Evaluation Version) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.4368mm" height="1.5711mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 4.78 3.08"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="648" font-variant="normal" style="fill-rule:nonzero" font-weight="500">
+	<font-face 
+		font-family="Dubai Medium">
+		<font-face-src>
+			<font-face-name name="Dubai Medium"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="648" d="M393.987 648.023l239.044 -641.021 0 -7.00165 -120.016 0 -61.0379 171.993 -259.967 0 -60.0494 -171.993 -116.969 0 0 7.00165 237.974 641.021 141.021 0zm-170.016 -384.02l195.058 0 -98.0231 278.007 -97.0346 -278.007z"/>
+   <glyph unicode="l" horiz-adv-x="238" d="M65.9802 0l0 687.974 107.99 11.0379 0 -699.012 -107.99 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Dubai Medium";font-variant:normal;font-weight:500;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#FEFEFE}
+    .fnt0 {font-weight:500;font-size:2.38px;font-family:'Dubai Medium'}
+   ]]>
+  </style>
+ </defs>
+ <g id="图层_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1913574006192">
+   <g transform="matrix(1.03647 0 0 1 127.072 -660.942)">
+    <text x="-121.84" y="663.33"  class="fil0 fnt0">All</text>
+   </g>
+   <path class="fil0" d="M1.07 3.08l-0.84 0c-0.13,0 -0.23,-0.1 -0.23,-0.23l0 -2.61c0,-0.13 0.1,-0.23 0.23,-0.23l0.84 0 0 0.23 -0.6 0c-0.11,0 -0.2,0.09 -0.2,0.2l0 2.22c0,0.11 0.09,0.2 0.2,0.2l0.6 0 0 0.23z"/>
+   <path class="fil0" d="M3.71 3.08l0.84 0c0.13,0 0.23,-0.1 0.23,-0.23l0 -2.61c0,-0.13 -0.1,-0.23 -0.23,-0.23l-0.84 0 0 0.23 0.6 0c0.11,0 0.2,0.09 0.2,0.2l0 2.22c0,0.11 -0.09,0.2 -0.2,0.2l-0.6 0 0 0.23z"/>
+  </g>
+ </g>
+</svg>

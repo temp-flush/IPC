@@ -1,0 +1,180 @@
+{
+  "detect": {
+    "form": {
+      "action": "操作",
+      "dhcp": "DHCP",
+      "dhcpFalse": "静态IP",
+      "dhcpTrue": "自动获取",
+      "gateway": "默认网关",
+      "id": "ID",
+      "info": "信息",
+      "ip": "IP地址",
+      "mac": "MAC",
+      "name": "名称",
+      "onlineStatus": "在线状态",
+      "project": "项目",
+      "submask": "子网掩码",
+      "title": "设备信息",
+      "transfer": "选择",
+      "type": "类型",
+      "version": "版本"
+    }
+  },
+  "group": {
+    "dialog": {
+      "title": "添加分组"
+    },
+    "form": {
+      "name": "分组名称"
+    }
+  },
+  "project": {
+    "form": {
+      "title": "项目设置"
+    }
+  },
+  "setting": {
+    "audioFile": {
+      "form": {
+        "bitRate": "比率",
+        "duration": "时长",
+        "name": "名称",
+        "size": "大小",
+        "title": "Title"
+      },
+      "serverMessage": "Server Message",
+      "serverMusic": "Server Music"
+    },
+    "dateRange": {
+      "form": {
+        "end": "结束日期",
+        "holidayOff": "无休息",
+        "holidayOn": "法定节假日休息",
+        "range": "执行日期",
+        "rules": "日期规则",
+        "start": "开始日期",
+        "summerTime": "夏令时"
+      },
+      "title": "日期范围"
+    },
+    "event": {
+      "form": {
+        "action": "编辑",
+        "command": "Event Command",
+        "eventId": "Event ID",
+        "eventName": "Event Name",
+        "gpo": "GPO Action",
+        "operation": "操作",
+        "save": "保存",
+        "source": "Source",
+        "zones": "Zones"
+      }
+    },
+    "expand": {
+      "form": {
+        "id": "扩展接口设备序号"
+      }
+    },
+    "gpiEventSetting": {
+      "form": {
+        "action": "操作",
+        "eventId": "Event ID",
+        "eventName": "Event Name",
+        "gpi": "GPI",
+        "functionKey": "Function Key",
+        "test": "测试",
+        "title": "GPI Event setting",
+        "type": "Function Key/Event"
+      }
+    },
+    "gpo": {
+      "dialog": {
+        "title": "添加 GPO"
+      },
+      "form": {
+        "action": "Action",
+        "gpo": "GPO",
+        "name": "Name",
+        "status": "状态"
+      },
+      "type": {
+        "control": "控制",
+        "status": "状态"
+      }
+    },
+    "keySetting": {
+      "from": {
+        "control": "EMG Control"
+      }
+    },
+    "label": "设备",
+    "source": {
+      "dialog": {
+        "title": "选择资源文件"
+      }
+    },
+    "terminal": {
+      "form": {
+        "delay": "DELAY",
+        "priority": "Priority"
+      }
+    },
+    "timerSetting": {
+      "form": {
+        "action": "操作",
+        "duration": "Timer0 schedule Date",
+        "eventId": "Event ID",
+        "eventName": "Event Name",
+        "status": "On/Off",
+        "time": "Time",
+        "week": "Week"
+      }
+    },
+    "week": {
+      "form": {
+        "days": "星期",
+        "everyDay": "每一天",
+        "fri": "星期五",
+        "mon": "星期一",
+        "repeat": "重复",
+        "sat": "星期六",
+        "sun": "星期日",
+        "thu": "星期四",
+        "title": "重复设置",
+        "tue": "星期二",
+        "wed": "星期三"
+      },
+      "panel": {
+        "repeat": "重复"
+      }
+    }
+  },
+  "settings": {
+    "audioFile": "音频文件",
+    "gpiEventSetting": "GPI事件设置",
+    "keySetting": "按键设置",
+    "soundChannel": "声源/通道",
+    "terminal": "终端设置",
+    "timerSetting": "时间表设置",
+    "title": "设备配置"
+  },
+  "terminal": {
+    "tree": {
+      "title": "项目"
+    }
+  },
+  "title": "设备和系统",
+  "type": {
+    "broadcastServer": "广播站",
+    "callStation": "呼叫站",
+    "terminal": "终端"
+  },
+  "zone": {
+    "action": {
+      "add": "添加分区"
+    },
+    "tip": {
+      "add": "请先选择分组"
+    }
+  }
+}

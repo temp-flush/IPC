@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 (Evaluation Version) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.1282mm" height="1.5711mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3.26 2.41"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="666" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="+" horiz-adv-x="584" d="M251.01 115.984l0 196.018 -195.038 0 0 81.9965 195.038 0 0 194.98 82.9775 0 0 -194.98 195.038 0 0 -81.9965 -195.038 0 0 -196.018 -82.9775 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#FEFEFE}
+    .fnt0 {font-weight:normal;font-size:2.65px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="图层_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1913925054704">
+   <path class="fil0" d="M0.83 2.41l-0.65 0c-0.1,0 -0.18,-0.08 -0.18,-0.18l0 -2.04c0,-0.1 0.08,-0.18 0.18,-0.18l0.65 0 0 0.18 -0.47 0c-0.08,0 -0.15,0.07 -0.15,0.15l0 1.73c0,0.09 0.07,0.15 0.15,0.15l0.47 0 0 0.18z"/>
+   <g transform="matrix(0.974554 0 0 1 104.576 -516.331)">
+    <text x="-106.41" y="518.47"  class="fil0 fnt0">+</text>
+   </g>
+   <path class="fil0" d="M2.43 2.41l0.65 0c0.1,0 0.18,-0.08 0.18,-0.18l0 -2.04c0,-0.1 -0.08,-0.18 -0.18,-0.18l-0.65 0 0 0.18 0.47 0c0.08,0 0.15,0.07 0.15,0.15l0 1.73c0,0.09 -0.07,0.15 -0.15,0.15l-0.47 0 0 0.18z"/>
+  </g>
+ </g>
+</svg>

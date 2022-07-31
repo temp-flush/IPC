@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 (Evaluation Version) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="3.5067mm" height="1.539mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1.43 0.63"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="667" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="+" horiz-adv-x="583" d="M250.987 116.008l0 196.017 -195.016 0 0 81.9537 195.016 0 0 195.016 83.0142 0 0 -195.016 195.016 0 0 -81.9537 -195.016 0 0 -196.017 -83.0142 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil1 {fill:#332C2B}
+    .fil0 {fill:#332C2B}
+    .fnt0 {font-weight:normal;font-size:0.69px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="图层_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1913894807168">
+   <path class="fil0" d="M0.22 0.63l-0.17 0c-0.03,0 -0.05,-0.02 -0.05,-0.05l0 -0.53c0,-0.03 0.02,-0.05 0.05,-0.05l0.17 0 0 0.05 -0.12 0c-0.02,0 -0.04,0.02 -0.04,0.04l0 0.45c0,0.02 0.02,0.04 0.04,0.04l0.12 0 0 0.05z"/>
+   <g transform="matrix(0.985841 0 0 1 -172.054 22.0849)">
+    <text x="175.34" y="-21.53"  class="fil0 fnt0">+</text>
+   </g>
+   <path class="fil0" d="M1.21 0.63l0.17 0c0.03,0 0.05,-0.02 0.05,-0.05l0 -0.53c0,-0.03 -0.02,-0.05 -0.05,-0.05l-0.17 0 0 0.05 0.12 0c0.02,0 0.04,0.02 0.04,0.04l0 0.45c0,0.02 -0.02,0.04 -0.04,0.04l-0.12 0 0 0.05z"/>
+   <g>
+    <polygon class="fil1" points="0.41,0.18 0.31,0.18 0.31,0.37 0.37,0.37 0.37,0.24 0.48,0.24 0.59,0.16 0.59,0.05 "/>
+    <polygon class="fil1" points="0.5,0.27 0.4,0.27 0.4,0.47 0.5,0.47 0.69,0.61 0.69,0.13 "/>
+   </g>
+  </g>
+ </g>
+</svg>

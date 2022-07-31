@@ -1,0 +1,41 @@
+{
+  "setting": {
+    "audioFileSend": {
+      "action": {
+        "message": "Server Messages",
+        "music": "Server Music",
+        "save": "Save as Event"
+      },
+      "form": {
+        "times": "Play Mode"
+      }
+    },
+    "gpiControl": {
+      "action": {
+        "trigger": "Trigger"
+      },
+      "form": {
+        "gpiIndex": "设备序号"
+      }
+    },
+    "inputControl": {
+      "action": {
+        "save": "Save as Event"
+      },
+      "panel": {
+        "bgm": "BGM Input Control",
+        "general": "General Input Control"
+      }
+    },
+    "speakerControl": {
+      "title": "Speaker Control"
+    }
+  },
+  "settings": {
+    "audioFileSend": "Audio File Send",
+    "gpiControl": "GPI Control",
+    "inputControl": "Input Control",
+    "speakerControl": "Speaker Control"
+  },
+  "title": "现场控制"
+}

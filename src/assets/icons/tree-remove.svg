@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 (Evaluation Version) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.0145mm" height="1.539mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 0.48 0.36"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="666" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="-" horiz-adv-x="333" d="M30.9958 215.014l0 87.993 272.011 0 0 -87.993 -272.011 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#332C2B}
+    .fnt0 {font-weight:normal;font-size:0.46px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="图层_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1678355306464">
+   <g transform="matrix(1.04847 0 0 1 -105.45 12.7938)">
+    <text x="100.72" y="-12.49"  class="fil0 fnt0">-</text>
+   </g>
+   <path class="fil0" d="M0.13 0.36l-0.1 0c-0.02,0 -0.03,-0.01 -0.03,-0.03l0 -0.31c0,-0.02 0.01,-0.03 0.03,-0.03l0.1 0 0 0.03 -0.07 0c-0.01,0 -0.02,0.01 -0.02,0.02l0 0.26c0,0.01 0.01,0.02 0.02,0.02l0.07 0 0 0.03z"/>
+   <path class="fil0" d="M0.35 0.36l0.1 0c0.02,0 0.03,-0.01 0.03,-0.03l0 -0.31c0,-0.02 -0.01,-0.03 -0.03,-0.03l-0.1 0 0 0.03 0.07 0c0.01,0 0.02,0.01 0.02,0.02l0 0.26c0,0.01 -0.01,0.02 -0.02,0.02l-0.07 0 0 0.03z"/>
+  </g>
+ </g>
+</svg>

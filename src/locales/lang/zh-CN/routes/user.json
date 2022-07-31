@@ -1,0 +1,9 @@
+{
+  "form": {
+    "action": "操作",
+    "level": "级别",
+    "username": "用户名称",
+    "password": "密码"
+  },
+  "title": "用户管理"
+}
