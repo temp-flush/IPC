@@ -74,8 +74,8 @@
   const { t } = useI18n();
   import { useI18n } from '/@/utils/hooks/web/useI18n';
   import SpFormItem, { SpFormInput } from '/@/components/SpForm/SpFormItem.vue';
-  const data = bgmListGet();
-  console.log(data);
+  // const data = bgmListGet();
+  // console.log(data);
   const tableData = ref(
     new Array(1).fill(0).map((item, index) => ({
       input: `BGM Music`,

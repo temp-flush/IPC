@@ -43,9 +43,16 @@
     everyDay: false,
     repeat: false,
     days: [] as string[],
+    checked: '',
   };
   export type DataType = typeof initData;
-  const modalProps = genModalProps<DataType>(Object);
+  let modalProps = genModalProps<DataType>(Object);
+  console.log(modalProps);
+  modalProps = Object.assign(modalProps, {
+    checked: {
+      type: String,
+    },
+  });
   export default defineComponent({
     components: {
       Modal,
@@ -57,10 +64,15 @@
     },
     props: modalProps,
     setup(props) {
+      console.log(props);
       const { formState, refForm, getForm, updateForm } = useSpForm({
         ...initData,
       } as DataType);
-
+      console.log(formState);
+      if (props.checked) {
+        formState.value.days = JSON.parse(props.checked);
+        console.log(formState);
+      }
       const { modalAttrs } = useSpModal(props, {
         open: updateForm,
         done: getForm,
@@ -77,9 +89,13 @@
       ];
 
       watch(
-        () => formState.value.days.length,
+        () => formState.value.days?.length,
         () => {
-          formState.value.everyDay = formState.value.days.length === 7;
+          formState.value;
+          console.log(formState.value);
+        },
+        () => {
+          formState.value.everyDay = formState.value.days?.length === 7;
         },
       );
       watch(

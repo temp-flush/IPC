@@ -41,12 +41,13 @@ export default function useSpTable<T, P extends ColType>({
     console.log(params, selectKeys);
     await createConfirmRemove();
     await remove?.(params);
-    console.log('刷新')
-    tableQuery();
+    console.log('刷新');
+    // tableQuery();
+    tableRequest();
   }
   function onAdd() {
     // 添加
-    console.log(tableData)
+    console.log(tableData);
     tableData.value.unshift({
       id: -1,
       isNew: true,

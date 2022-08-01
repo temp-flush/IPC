@@ -35,7 +35,7 @@
                 @onChange="onTypeChange(record.id, $event)"
               />
               <template v-else>
-                {{ text }}
+                {{ JSON.parse(text).gpiId }}
               </template>
             </div>
           </template>
@@ -64,7 +64,7 @@
                 v-if="editableData[record.id]"
                 dialog
                 @focus="eventOpen(record.id)"
-                v-model:value="editableData[record.id].eventId"
+                v-model:value="editableData[record.id].commandId"
               />
               <SpFormInput
                 v-else-if="record.isNew"
@@ -83,7 +83,7 @@
                 {{ appendData.eventName }}
               </template>
               <template v-else>
-                {{ text }}
+                {{ getName(record) }}
               </template>
             </div>
           </template>
@@ -195,8 +195,9 @@
     deviceGpiEventSettingRemove,
     deviceGpiEventSettingUpdate,
     deviceGpiEventSettingAdd,
+    deviceEventGet,
   } from '/@/serveices';
-  import { reactive, ref, UnwrapRef } from 'vue';
+  import { reactive, ref, UnwrapRef, onMounted } from 'vue';
   import { cloneDeep } from 'lodash-es';
   import { KEY_FUNCTION_LIST } from '../../../utils/enum';
   const { tableRequest, refTable, tableCols, selectKeys, onRemove, onAdd, tableData } = useSpTable({
@@ -204,7 +205,7 @@
     remove: deviceGpiEventSettingRemove,
     cols: [
       {
-        dataIndex: 'gpi',
+        dataIndex: 'data',
         title: t('routes.device.setting.gpiEventSetting.form.gpi'),
         width: 60,
         slots: { customRender: 'GPI' },
@@ -216,7 +217,7 @@
         slots: { customRender: 'type' },
       },
       {
-        dataIndex: 'eventId',
+        dataIndex: 'commandId',
         title: t('routes.device.setting.gpiEventSetting.form.eventId'),
         width: 60,
         slots: { customRender: 'eventId' },
@@ -255,14 +256,15 @@
   // edit
   const editableData: UnwrapRef<Record<string, ScopeType['record']>> = reactive({});
   const edit = (key: number) => {
-    console.log(tableData.value, key)
+    console.log(tableData.value, key);
     editableData[key] = cloneDeep(tableData.value.filter((item) => key === item.id)[0]);
   };
   const save = (key: number) => {
     if (key == -1) {
       eventVisible.value = false;
       deviceGpiEventSettingAdd(appendData).then((res) => {
-        console.log(res)
+        console.log(res);
+        tableRequest();
       });
     } else {
       eventVisible.value = false;
@@ -270,6 +272,7 @@
       deviceGpiEventSettingUpdate(editableData[key]).then(() => {
         Object.assign(tableData.value.filter((item) => key === item.id)[0], editableData[key]);
         delete editableData[key];
+        tableRequest();
       });
     }
   };
@@ -287,6 +290,24 @@
       focusRecord.value = editableData[key];
     }
     eventVisible.value = true;
+  }
+
+  let command = [];
+  onMounted(() => {
+    deviceEventGet().then((res) => {
+      command = res;
+    });
+  });
+  function getName(key) {
+    let showName = '';
+    console.log(command);
+    command.forEach((element) => {
+      console.log(element);
+      if (element.id == key.commandId) {
+        showName = element.name;
+      }
+    });
+    return showName;
   }
 </script>
 <style lang="less" scoped></style>

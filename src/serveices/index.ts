@@ -209,7 +209,7 @@ export const deviceDetectGet: RequestFunction = function (params) {
   });
 };
 export const deviceDetect: RequestFunction = function (params) {
-  return defHttp.get(Api.deviceDetect, { params },  { isTransformResponse: false });
+  return defHttp.get(Api.deviceDetect, { params }, { isTransformResponse: false });
 };
 export const deviceReboot: RequestFunction = function (params) {
   return defHttp.post(Api.deviceReboot, { params });
@@ -258,11 +258,13 @@ export const deviceTimerSettingGet: RequestFunction = function (params) {
 
 export const deviceTimerSettingAdd: RequestFunction = function (params) {
   params.id = '';
-  params.time = JSON.stringify({
-    hour: moment(params.time).format('HH'),
-    minute: moment(params.time).format('mm'),
-    second: moment(params.time).format('ss'),
-  });
+  if (params.time.length == 8) {
+    params.time = JSON.stringify({
+      hour: params.time.split(':')[0] * 1,
+      minute: params.time.split(':')[1] * 1,
+      second: params.time.split(':')[2] * 1,
+    });
+  }
   const newObj = {
     sun: 7,
     mon: 1,
@@ -271,30 +273,43 @@ export const deviceTimerSettingAdd: RequestFunction = function (params) {
     thu: 4,
     fri: 5,
     sat: 6,
+    7: 7,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
   };
   const newWeek = JSON.parse(params.week).map((v) => newObj[v]);
-  params.time = JSON.stringify(newWeek);
+  params.week = JSON.stringify(newWeek);
   params.commandId = params.eventId;
-  params.enable = params.status;
+  params.enable = params.status == true ? 1 : 0;
   delete params.eventId;
   delete params.eventName;
   delete params.status;
-  delete params.week;
   return defHttp.post(Api.deviceTimerSettingAdd, { params }, { isTransformResponse: false });
 };
 
 export const deviceTimerSettingDelete: RequestFunction = function (params) {
   console.log(params);
-  return defHttp.delete(Api.deviceTimerSettingDelete + params.selectKeys);
+  return defHttp.delete(
+    Api.deviceTimerSettingDelete + params.selectKeys,
+    {},
+    { isTransformResponse: false },
+  );
 };
 
 export const deviceTimerSettingUpdate: RequestFunction = function (params) {
   console.log(params);
-  params.time = JSON.stringify({
-    hour: moment(params.time).format('HH'),
-    minute: moment(params.time).format('mm'),
-    second: moment(params.time).format('ss'),
-  });
+  console.log(params.time.length);
+  if (params.time.length == 8) {
+    params.time = JSON.stringify({
+      hour: params.time.split(':')[0] * 1,
+      minute: params.time.split(':')[1] * 1,
+      second: params.time.split(':')[2] * 1,
+    });
+  }
   const newObj = {
     sun: 7,
     mon: 1,
@@ -303,15 +318,21 @@ export const deviceTimerSettingUpdate: RequestFunction = function (params) {
     thu: 4,
     fri: 5,
     sat: 6,
+    7: 7,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
   };
   const newWeek = JSON.parse(params.week).map((v) => newObj[v]);
-  params.time = JSON.stringify(newWeek);
-  params.commandId = params.eventId;
+  params.week = JSON.stringify(newWeek);
+  params.commandId = params.commandId ? params.commandId : params.eventId;
   params.enable = params.status;
   delete params.eventId;
   delete params.eventName;
   delete params.status;
-  delete params.week;
   return defHttp.put(
     Api.deviceTimerSettingUpdate + params.id,
     { params },
@@ -379,23 +400,22 @@ export const deviceEventUpdate: RequestFunction = function (params) {
   delete params.operation;
   delete params.source;
   delete params.zones;
-  return defHttp.put(Api.deviceEventUpdate + params.id, { params });
+  return defHttp.put(Api.deviceEventUpdate + params.id, { params }, { isTransformResponse: false });
 };
 
 export const deviceSourceGet: RequestFunction = function (params) {
-  return defHttp.post(Api.deviceSourceGet, { params });
+  return defHttp.post(Api.deviceSourceGet, { params }, { isTransformResponse: false });
 };
 export const deviceGpoGet: RequestFunction = function (params) {
-  return defHttp.post(Api.deviceGpoGet, { params });
+  return defHttp.post(Api.deviceGpoGet, { params }, { isTransformResponse: false });
 };
 export const deviceGpiEventSettingGet: RequestFunction = function (params) {
   return defHttp.get(Api.deviceGpiEventSettingGet, { params }, { isTransformResponse: false });
 };
 
 export const deviceGpiEventSettingAdd: RequestFunction = function (params) {
-  params.triggerType = params.type;
   params.id = -1;
-  params.trigger = JSON.stringify({
+  params.data = JSON.stringify({
     gpiId: 1,
     level: 'rising edge',
     eventName: '',
@@ -412,11 +432,28 @@ export const deviceGpiEventSettingAdd: RequestFunction = function (params) {
 };
 
 export const deviceGpiEventSettingUpdate: RequestFunction = function (params) {
+  console.log(params);
+  params.data = JSON.stringify({
+    gpiId: 1,
+    level: 'rising edge',
+    eventName: '',
+  });
+  params.commandId = params.eventId;
+  params.enable = true;
+  delete params.eventId;
+  delete params.eventName;
+  delete params.functionKey;
+  delete params.gpi;
+  delete params.type;
   return defHttp.put(Api.deviceGpiEventSettingUpdate, { params }, { isTransformResponse: false });
 };
 
 export const deviceGpiEventSettingRemove: RequestFunction = function (params) {
-  return defHttp.delete(Api.deviceGpiEventSettingRemove + params.selectKeys, {}, { isTransformResponse: false });
+  return defHttp.delete(
+    Api.deviceGpiEventSettingRemove + params.selectKeys,
+    {},
+    { isTransformResponse: false },
+  );
 };
 
 // 扩展接口
@@ -430,13 +467,13 @@ export const userListGet: RequestFunction = function (params) {
 };
 
 export const bgmListGet: RequestFunction = function (params) {
-  return defHttp.get(Api.bgmListGet);
+  return defHttp.get(Api.bgmListGet, {}, { isTransformResponse: false });
 };
 
 export const bgmListAdd: RequestFunction = function (params) {
-  return defHttp.post(Api.bgmListAdd, { params });
+  return defHttp.post(Api.bgmListAdd, { params }, { isTransformResponse: false });
 };
 
 export const bgmListRemove: RequestFunction = function (params) {
-  return defHttp.delete(Api.bgmListRemove + params);
+  return defHttp.delete(Api.bgmListRemove + params, {}, { isTransformResponse: false });
 };

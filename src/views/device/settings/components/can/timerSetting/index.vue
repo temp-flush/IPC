@@ -49,7 +49,19 @@
                 valueFormat="HH:mm:ss"
               />
               <template v-else>
-                {{ text }}
+                {{
+                  (JSON.parse(text).hour < 10
+                    ? '0' + JSON.parse(text).hour
+                    : JSON.parse(text).hour) +
+                  ':' +
+                  (JSON.parse(text).minute < 10
+                    ? '0' + JSON.parse(text).minute
+                    : JSON.parse(text).minute) +
+                  ':' +
+                  (JSON.parse(text).second < 10
+                    ? '0' + JSON.parse(text).second
+                    : JSON.parse(text).second)
+                }}
               </template>
             </div>
           </template>
@@ -61,7 +73,18 @@
               />
               <TimerWeek v-else-if="record.isNew" v-model:value="appendData.week" />
               <template v-else>
-                {{ text }}
+                {{
+                  text &&
+                  JSON.parse(text)
+                    .map((v) => {
+                      if (isNaN(v * 1)) {
+                        return obj[v];
+                      } else {
+                        return Mathobj[v];
+                      }
+                    })
+                    .join(',')
+                }}
               </template>
             </div>
           </template>
@@ -71,7 +94,7 @@
                 v-if="editableData[record.id]"
                 dialog
                 @focus="eventOpen(record.id)"
-                v-model:value="editableData[record.id].eventId"
+                v-model:value="editableData[record.id].commandId"
               />
               <SpFormInput
                 v-else-if="record.isNew"
@@ -90,7 +113,7 @@
                 {{ appendData.eventName }}
               </template>
               <template v-else>
-                {{ text }}
+                {{ getName(record) }}
               </template>
             </div>
           </template>
@@ -156,6 +179,24 @@
 
   // table
   const { t } = useI18n();
+  const obj = {
+    sun: '星期日',
+    mon: '星期一',
+    tue: '星期二',
+    wed: '星期三',
+    thu: '星期四',
+    fri: '星期五',
+    sat: '星期六',
+  };
+  const Mathobj = {
+    0: '星期日',
+    1: '星期一',
+    2: '星期二',
+    3: '星期三',
+    4: '星期四',
+    5: '星期五',
+    6: '星期六',
+  };
   const appendData = reactive({
     time: moment().format('HH:mm:ss'),
     status: true,
@@ -167,10 +208,15 @@
     deviceTimerSettingGet,
     deviceTimerSettingDelete,
     deviceTimerSettingUpdate,
-    deviceTimerSettingAdd
+    deviceTimerSettingAdd,
+    deviceEventGet,
   } from '/@/serveices';
-  import { reactive, ref, UnwrapRef } from 'vue';
+  import { reactive, ref, UnwrapRef, onMounted } from 'vue';
   import { cloneDeep } from 'lodash-es';
+  import { json } from 'stream/consumers';
+  const { tableDatas } = useSpTable({
+    request: deviceEventGet,
+  });
   const { tableRequest, refTable, tableCols, selectKeys, onRemove, onAdd, tableData } = useSpTable({
     request: deviceTimerSettingGet,
     remove: deviceTimerSettingDelete,
@@ -200,7 +246,7 @@
         slots: { customRender: 'eventName' },
       },
       {
-        dataIndex: 'status',
+        dataIndex: 'enable',
         title: t('routes.device.setting.timerSetting.form.status'),
         width: 60,
         slots: { customRender: 'status' },
@@ -221,14 +267,15 @@
   // edit
   const editableData: UnwrapRef<Record<string, ScopeType['record']>> = reactive({});
   const edit = (key: number) => {
-    console.log(tableData.value)
+    console.log(tableData.value);
     editableData[key] = cloneDeep(tableData.value.filter((item) => key === item.id)[0]);
   };
   const save = (key: number) => {
     if (key == -1) {
       eventVisible.value = false;
       deviceTimerSettingAdd(appendData).then((res) => {
-        console.log(res)
+        console.log(res);
+        tableRequest();
       });
     } else {
       eventVisible.value = false;
@@ -236,6 +283,7 @@
       deviceTimerSettingUpdate(editableData[key]).then(() => {
         Object.assign(tableData.value.filter((item) => key === item.id)[0], editableData[key]);
         delete editableData[key];
+        tableRequest();
       });
     }
   };
@@ -250,6 +298,24 @@
       focusRecord.value = editableData[key];
     }
     eventVisible.value = true;
+  }
+  let command = [];
+  onMounted(() => {
+    deviceEventGet().then((res) => {
+      command = res;
+    });
+  });
+  function getName(key) {
+    console.log(tableDatas);
+    let showName = '';
+    console.log(command);
+    command.forEach((element) => {
+      console.log(element);
+      if (element.id == key.commandId) {
+        showName = element.name;
+      }
+    });
+    return showName;
   }
 </script>
 <style lang="less" scoped>

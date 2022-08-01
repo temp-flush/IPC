@@ -170,7 +170,12 @@
 
   // table
   const { t } = useI18n();
-  import { deviceEventGet, deviceEventRemove, deviceEventUpdate, deviceEventAdd } from '/@/serveices';
+  import {
+    deviceEventGet,
+    deviceEventRemove,
+    deviceEventUpdate,
+    deviceEventAdd,
+  } from '/@/serveices';
   import { EVENT_COMMAND_LIST } from '../../utils/enum';
   import type { EventCommand } from '../../utils/enum';
   import { reactive, UnwrapRef, watch, watchEffect } from 'vue';
@@ -232,25 +237,27 @@
   const emit = defineEmits(['update:value', 'update:visible', 'update:name']);
   const editableData: UnwrapRef<Record<string, ScopeType['record']>> = reactive({});
   const edit = (key: number) => {
-    console.log(tableData)
+    console.log(tableData);
     editableData[key] = cloneDeep(tableData.value.filter((item) => key === item.id)[0]);
   };
   const save = (key: number) => {
     console.log(appendData, key);
-    if (!key) {
-      deviceEventAdd(appendData).then(res=>{
+    if (key == -1) {
+      deviceEventAdd(appendData).then((res) => {
         console.log(res);
       });
     } else {
-      deviceEventUpdate(editableData[key]).then(res=>{
+      deviceEventUpdate(editableData[key]).then((res) => {
         Object.assign(tableData.value.filter((item) => key === item.id)[0], editableData[key]);
         delete editableData[key];
       });
     }
   };
   function timerSave() {
-    const filterData = cloneDeep(tableData.value.filter((item) => selectKeys.value[0] === item.id)[0]);
-    console.log(filterData)
+    const filterData = cloneDeep(
+      tableData.value.filter((item) => selectKeys.value[0] === item.id)[0],
+    );
+    console.log(filterData);
     emit('update:name', filterData.name);
     emit('update:value', selectKeys.value[0]);
     timerHide();
